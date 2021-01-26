@@ -1,0 +1,123 @@
+@import 'stylesnull.scss';
+
+body {
+  background-color: black;
+}
+.wrapper {
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 0px 0px 0px;
+}
+.work-place {
+  min-height: 500px;
+  border: 1px solid white;
+  padding: 15px;
+  position: relative;
+}
+
+$positionForAddItem: 15px;
+.add-item {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  top: $positionForAddItem;
+  right: 6.5%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+.add-item-long {
+  position: absolute;
+  width: 87%;
+  height: 50px;
+  border-radius: 20px;
+  background-color: white;
+  top: $positionForAddItem;
+  right: 6.5%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  transition: all 1s ease;
+}
+.add-item-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  top: $positionForAddItem + 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.acept {
+  right: 12.2%;
+}
+.close {
+  right: 7.7%;
+}
+.add-text-item {
+  position: absolute;
+  top: $positionForAddItem + 10px;
+  left: 80%;
+  opacity: 0;
+  width: 50px;
+  height: 30px;
+  transition: all 0.8s ease;
+  &.open {
+    left: 10%;
+    width: 580px;
+    height: 30px;
+    opacity: 1;
+    transition: all 1s ease;
+  }
+}
+.title {
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 10px 20px 30px;
+}
+.item {
+  width: 90%;
+  height: 50px;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 0px auto 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.remove-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  right: 10px;
+  opacity: 0.1;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+.remove-button:hover {
+  opacity: 1;
+}
