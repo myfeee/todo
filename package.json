@@ -1,6 +1,6 @@
 {
   "name": "todolist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config  ./build/webpack.dev.conf.js",
@@ -35,5 +35,13 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {},
-  "description": "to do list"
+  "description": "to do list",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myfeee/todo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myfeee/todo/issues"
+  },
+  "homepage": "https://github.com/myfeee/todo#readme"
 }

@@ -1,10 +1,10 @@
 const workPlace = document.querySelector('.work-place');
 let numberOfItem = 0;
 //Создание элемента списка
-function createItem() {
+function createItem(text = 'example') {
   const item = document.createElement('div');
   item.classList.add('item');
-  item.innerText = numberOfItem;
+  item.innerText = text;
   workPlace.appendChild(item);
   const removeButton = document.createElement('div');
   removeButton.classList.add('remove-button', numberOfItem);
@@ -15,7 +15,10 @@ function createItem() {
 //Удаление элемента списка
 function deleteItem(number) {
   const items = document.querySelectorAll('.item');
-  workPlace.removeChild(items[number]);
+  items[number].classList.add('item-close');
+  setTimeout(() => {
+    workPlace.removeChild(items[number]);
+  }, 700);
   const removeButtons = document.querySelectorAll('.remove-button');
   for (let i = 0; i < removeButtons.length; i++) {
     removeButtons[i].classList = '';
@@ -23,9 +26,6 @@ function deleteItem(number) {
   }
   numberOfItem--;
 }
-createItem();
-createItem();
-createItem();
 
 //Функция отвечающая за кнопку добавления дела
 function addItemFunc(number, key = 0) {
@@ -55,16 +55,32 @@ function addItemFunc(number, key = 0) {
 
 //Вешаем обработчик клика на страницу
 document.body.onclick = function queryTarget(e) {
+  //Отслеживаем кнопку добавление дела
   if (e.target.classList.value == 'add-item') {
     addItemFunc(1, 1);
     addItemFunc(2);
+    document.querySelector('.add-text-item').focus();
   }
+  //Отслеживаем кнопку закрытия добавления дела
   if (e.target.classList.value.split(' ')[0] == 'remove-button')
     deleteItem(e.target.classList.value.split(' ')[1]);
   if (e.target.classList.value.split(' ')[1] == 'close') {
     addItemFunc(3);
     addItemButtonOpacity();
     addItemFunc(1);
+    document.querySelector('.add-text-item').value = '';
+  }
+  //Отслеживаем кнопку принятия дела
+  if (e.target.classList.value.split(' ')[1] == 'acept') {
+    const textItem = document.querySelector('.add-text-item');
+    textItem.value = textItem.value.trim().substr(0, 85);
+    if (textItem.value != '') {
+      createItem(textItem.value);
+      textItem.value = '';
+      addItemFunc(3);
+      addItemButtonOpacity();
+      addItemFunc(1);
+    }
   }
 };
 
