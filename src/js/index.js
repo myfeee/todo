@@ -27,7 +27,7 @@ function deleteItem(number) {
   numberOfItem--;
 }
 
-//Функция отвечающая за кнопку добавления дела
+//Функция отвечающая за кнопку добавления дела;
 function addItemFunc(number, key = 0) {
   if (number == 1) {
     if (key == 1) {
