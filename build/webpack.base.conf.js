@@ -14,7 +14,7 @@ module.exports = {
     paths: PATHS,
   },
   entry: {
-    app: PATHS.src,
+    app: ['babel-polyfill', PATHS.src],
     //lk:  `${PATHS.src}/lk.js` //для примера ЛК
   },
   output: {

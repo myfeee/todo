@@ -1,3 +1,5 @@
+const { resolve } = require('path');
+
 const workPlace = document.querySelector('.work-place');
 let numberOfItem = 0;
 let quantityItems = 0;
